@@ -1,4 +1,3 @@
-// Crear tarea
 function agregarTarea() {
   const titulo = document.getElementById("titulo").value.trim();
   const descripcion = document.getElementById("descripcion").value.trim();
@@ -14,8 +13,7 @@ function agregarTarea() {
 
   const fechaCreacion = new Date().toLocaleString();
 
-  // Crear el objeto de tarea
-  const tarea = {
+  const nuevaTarea = {
     titulo,
     descripcion,
     responsable,
@@ -25,42 +23,11 @@ function agregarTarea() {
     fechaCreacion
   };
 
-  // Obtener las tareas del localStorage y agregar la nueva tarea
-  const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
-  tareas.push(tarea);
+  // Guardar en localStorage
+  let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+  tareas.push(nuevaTarea);
   localStorage.setItem("tareas", JSON.stringify(tareas));
 
-  // Limpiar los campos
-  document.getElementById("titulo").value = "";
-  document.getElementById("descripcion").value = "";
-  document.getElementById("responsable").value = "";
-  document.getElementById("eta").value = "";
-  document.getElementById("prioridad").value = "Baja";
-  document.getElementById("estado").value = "Pendiente";
-
   // Redirigir al dashboard
-  window.location.href = 'index.html';
+  window.location.href = "index.html";
 }
-
-// Al cargar el Dashboard, verificar tareas
-window.onload = function() {
-  const listaTareas = JSON.parse(localStorage.getItem("tareas")) || [];
-  console.log(listaTareas);  // Verifica que las tareas estén almacenadas correctamente
-
-  const ul = document.getElementById("listaTareas");
-  ul.innerHTML = "";  // Limpiar lista existente
-
-  listaTareas.forEach(tarea => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <div class="tarea-title">${tarea.titulo}</div>
-      <div class="tarea-meta">
-        <strong>Responsable:</strong> ${tarea.responsable}<br>
-        <strong>Prioridad:</strong> ${tarea.prioridad}<br>
-        <strong>Estado:</strong> ${tarea.estado}<br>
-        <strong>ETA:</strong> ${tarea.eta}<br>
-      </div>
-    `;
-    ul.appendChild(li);
-  });
-};

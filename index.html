@@ -2,20 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard - Lista de Tareas</title>
+  <title>Lista de Tareas</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Panel de Control</h1>
-    
-    <!-- Botón para ir a la página de crear tarea -->
-    <button onclick="window.location.href='crear.html'">Crear Nueva Tarea</button>
-    
-    <h2>Tareas Pendientes</h2>
+    <h1>Dashboard</h1>
+    <a href="crear.html"><button>Crear Tarea</button></a>
+
+    <h2>Lista de Tareas</h2>
     <ul id="listaTareas"></ul>
   </div>
 
+  <script src="js/eliminar.js"></script>
   <script src="js/dashboard.js"></script>
 </body>
 </html>
