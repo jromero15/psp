@@ -39,7 +39,7 @@ function agregarTarea() {
   document.getElementById("estado").value = "Pendiente";
 
   // Redirigir al dashboard
-  window.location.href = 'dashboard.html';
+  window.location.href = 'index.html';
 }
 
 // Al cargar el Dashboard, verificar tareas
