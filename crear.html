@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Crear Tarea</h1>
+
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" placeholder="Título">
+
+    <label for="descripcion">Descripción</label>
+    <textarea id="descripcion" placeholder="Descripción"></textarea>
+
+    <label for="responsable">Responsable de la tarea</label>
+     <select id="responsable">
+      <option value="user1">user1</option>
+      <option value="user2">user2</option>
+      <option value="user3">user3</option>
+    </select>
+
+    <label for="eta">Fecha de entrega de la tarea</label>
+    <input type="date" id="eta">
+
+    <label for="prioridad">Prioridad</label>
+    <select id="prioridad">
+      <option value="Baja">Baja</option>
+      <option value="Media">Media</option>
+      <option value="Alta">Alta</option>
+    </select>
+
+    <label for="estado">Estado</label>
+    <select id="estado">
+      <option value="Pendiente">Pendiente</option>
+      <option value="En progreso">En progreso</option>
+      <option value="Completado">Completado</option>
+    </select>
+
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+  </div>
+
+  <script src="js/crear.js"></script>
+  <script src="js/eliminar.js"></script>
+</body>
+</html>
