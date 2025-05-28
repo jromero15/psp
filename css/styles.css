@@ -57,29 +57,12 @@ li {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
 }
 
 .tarea-title {
   font-weight: bold;
   font-size: 18px;
-}
-
-.tarea-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.eliminar-btn {
-  background-color: #ef4444;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.eliminar-btn:hover {
-  background-color: #dc2626;
 }
 
 .container {
@@ -109,15 +92,6 @@ ul {
   padding: 0;
 }
 
-li {
-  background: #e0e7ff;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 
 .tarea-title {
   font-weight: bold;
@@ -129,3 +103,22 @@ li {
   color: #666;
 }
 
+.tarea-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.eliminar-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.eliminar-btn:hover {
+  background-color: #dc2626;
+}

@@ -16,9 +16,9 @@ function cargarTareas() {
         <strong>ETA:</strong> ${t.eta}<br>
         <strong>Creado:</strong> ${t.fechaCreacion}
       </div>
-      <div class="tarea-footer">
+
         <button class="eliminar-btn" onclick="eliminarTarea(event)">Eliminar</button>
-      </div>
+
     `;
     lista.appendChild(li);
   });
