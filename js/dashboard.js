@@ -31,7 +31,11 @@ function cargarTareas() {
       <div class="tarea-footer">
         <button class="editar-btn" onclick="location.href='editar.html?titulo=${encodeURIComponent(t.titulo)}'">Editar</button>
         <button class="eliminar-btn" onclick="eliminarTarea(event)">Eliminar</button>
+        <!-- Modal de Confirmación -->
+
+
       </div>
+      
     `;
 
     lista.appendChild(card);

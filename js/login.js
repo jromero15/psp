@@ -5,7 +5,7 @@ function login() {
 
   const credenciales = {
     usuario: "usuario1",
-    contrasena: "contrasena1"
+    contrasena: "contrasena1",
   };
 
   if (usuario === credenciales.usuario && contrasena === credenciales.contrasena) {

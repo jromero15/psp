@@ -267,3 +267,57 @@ ul {
 .semaforo-estado.completado {
   background-color: #10b981;
 }
+
+/* Estilo para el modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-botones button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#btnConfirmar {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#btnCancelar {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#btnConfirmar:hover {
+  background-color: #d32f2f;
+}
+
+#btnCancelar:hover {
+  background-color: #388e3c;
+}
+
+
+
+
