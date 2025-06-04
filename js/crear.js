@@ -29,5 +29,5 @@ function agregarTarea() {
   localStorage.setItem("tareas", JSON.stringify(tareas));
 
   // Redirigir al dashboard
-  window.location.href = "index.html";
+  window.location.href = "dashboard.html";
 }

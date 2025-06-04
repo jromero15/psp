@@ -33,5 +33,5 @@ function guardarCambios() {
   const nuevasTareas = tareas.map(t => t.titulo === tituloOriginal ? nuevaTarea : t);
   localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
 
-  window.location.href = "index.html";
+  window.location.href = "dashboard.html";
 }
