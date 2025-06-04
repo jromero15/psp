@@ -1,14 +1,22 @@
 function eliminarTarea(event) {
   const boton = event.target;
   const tarea = boton.closest(".tarea-card"); // Buscar el div más cercano con clase "tarea-card"
-
-  // Obtener el título de la tarea para identificarla
   const titulo = tarea.querySelector(".tarea-title").textContent;
 
-  // Mostrar un cuadro de confirmación
-  const confirmacion = confirm(`¿Estás seguro de que deseas eliminar la tarea: "${titulo}"?`);
+  // Mostrar el modal
+  const modal = document.getElementById("modalEliminar");
+  const tituloModal = document.getElementById("tituloModal");
+  const botonConfirmar = document.getElementById("confirmarEliminacion");
+  const botonCancelar = document.getElementById("cancelarEliminacion");
 
-  if (confirmacion) {
+  // Cambiar el texto del modal con el título de la tarea
+  tituloModal.textContent = `Eliminar tarea: "${titulo}"`;
+
+  // Mostrar el modal
+  modal.style.display = "block";
+
+  // Función para confirmar la eliminación
+  botonConfirmar.onclick = function () {
     // Eliminar del DOM
     tarea.remove();
 
@@ -18,8 +26,29 @@ function eliminarTarea(event) {
     localStorage.setItem("tareas", JSON.stringify(tareas));
 
     alert("Tarea eliminada exitosamente.");
-  } else {
-    alert("No se eliminó la tarea.");
-  }
-}
 
+    // Cerrar el modal
+    modal.style.display = "none";
+  };
+
+  // Función para cancelar la eliminación
+  botonCancelar.onclick = function () {
+    alert("No se eliminó la tarea.");
+
+    // Cerrar el modal
+    modal.style.display = "none";
+  };
+
+  // Función para cerrar el modal al hacer clic en la 'X'
+  const cerrarModal = document.getElementById("cerrarModal");
+  cerrarModal.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Cerrar el modal si se hace clic fuera del modal
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+}
