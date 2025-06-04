@@ -195,3 +195,75 @@ ul {
 .editar-btn:hover {
   background-color: #059669;
 }
+
+.prioridad-alta {
+  color: #dc2626; /* rojo */
+  font-weight: bold;
+}
+
+.prioridad-media {
+  color: #facc15; /* amarillo */
+  font-weight: bold;
+}
+
+.prioridad-baja {
+  color: #10b981; /* verde */
+  font-weight: bold;
+}
+
+/* Opcional: círculo tipo semáforo */
+.semaforo {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.semaforo.alta {
+  background-color: #dc2626;
+}
+
+.semaforo.media {
+  background-color: #facc15;
+}
+
+.semaforo.baja {
+  background-color: #10b981;
+}
+
+.estado-pendiente {
+  color: #dc2626; /* rojo */
+  font-weight: bold;
+}
+
+.estado-en-progreso {
+  color: #f97316; /* naranja */
+  font-weight: bold;
+}
+
+.estado-completado {
+  color: #10b981; /* verde */
+  font-weight: bold;
+}
+
+/* Círculo tipo semáforo */
+.semaforo-estado {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.semaforo-estado.pendiente {
+  background-color: #dc2626;
+}
+
+.semaforo-estado.progreso {
+  background-color: #f97316;
+}
+
+.semaforo-estado.completado {
+  background-color: #10b981;
+}

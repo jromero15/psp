@@ -8,13 +8,22 @@ function cargarTareas() {
     const card = document.createElement("div");
     card.className = "tarea-card";
 
+    const prioridadClase = t.prioridad.toLowerCase(); // alta, media, baja
+    const estadoClase = t.estado.toLowerCase().replace(/\s+/g, "-"); // pendiente, en-progreso, completado
+
     card.innerHTML = `
       <div class="tarea-title">${t.titulo}</div>
       <div class="tarea-desc">${t.descripcion}</div>
       <div class="tarea-meta">
         <p><strong>Responsable:</strong> ${t.responsable}</p>
-        <p><strong>Prioridad:</strong> ${t.prioridad}</p>
-        <p><strong>Estado:</strong> ${t.estado}</p>
+        <p><strong>Prioridad:</strong> 
+          <span class="semaforo ${prioridadClase}"></span>
+          <span class="prioridad-${prioridadClase}">${t.prioridad}</span>
+        </p>
+        <p><strong>Estado:</strong>
+          <span class="semaforo-estado ${estadoClase}"></span>
+          <span class="estado-${estadoClase}">${t.estado}</span>
+        </p>
         <p><strong>ETA:</strong> ${t.eta}</p>
         <p><strong>Creado:</strong> ${t.fechaCreacion}</p>
       </div>
