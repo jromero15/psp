@@ -2,19 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Tareas</title>
+  <title>Login</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Panel de Control </h1>
-    <a href="crear.html"><button>Crear Tarea</button></a>
+    <h1>Iniciar Sesión</h1>
 
-    <h2>Lista de Tareas</h2>
-    <ul id="listaTareas"></ul>
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" placeholder="Usuario">
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" placeholder="Contraseña">
+
+    <button onclick="login()">Entrar</button>
+    <p id="errorMsg" style="color: red;"></p>
   </div>
 
-  <script src="js/eliminar.js"></script>
-  <script src="js/dashboard.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

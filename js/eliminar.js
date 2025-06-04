@@ -1,6 +1,8 @@
 function eliminarTarea(event) {
   const boton = event.target;
   const tarea = boton.closest("li");
+
+  // Obtener el título de la tarea para identificarla
   const titulo = tarea.querySelector(".tarea-title").textContent;
 
   // Eliminar del DOM

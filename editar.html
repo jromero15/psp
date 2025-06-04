@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Tarea</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Editar Tarea</h1>
+
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo">
+
+    <label for="descripcion">Descripción</label>
+    <textarea id="descripcion"></textarea>
+
+    <label for="responsable">Responsable de la tarea</label>
+    <select id="responsable">
+      <option value="user1">user1</option>
+      <option value="user2">user2</option>
+      <option value="user3">user3</option>
+    </select>
+
+    <label for="eta">Fecha de entrega</label>
+    <input type="date" id="eta">
+
+    <label for="prioridad">Prioridad</label>
+    <select id="prioridad">
+      <option value="Baja">Baja</option>
+      <option value="Media">Media</option>
+      <option value="Alta">Alta</option>
+    </select>
+
+    <label for="estado">Estado</label>
+    <select id="estado">
+      <option value="Pendiente">Pendiente</option>
+      <option value="En progreso">En progreso</option>
+      <option value="Completado">Completado</option>
+    </select>
+
+    <button onclick="guardarCambios()">Guardar Cambios</button>
+  </div>
+
+  <script src="js/editar.js"></script>
+</body>
+</html>
