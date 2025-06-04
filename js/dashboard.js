@@ -26,6 +26,7 @@ function cargarTareas() {
         </p>
         <p><strong>ETA:</strong> ${t.eta}</p>
         <p><strong>Creado:</strong> ${t.fechaCreacion}</p>
+        ${t.fechaModificacion ? `<p><strong>Modificado:</strong> ${t.fechaModificacion} por ${t.modificadoPor}</p>` : ""}
       </div>
       <div class="tarea-footer">
         <button class="editar-btn" onclick="location.href='editar.html?titulo=${encodeURIComponent(t.titulo)}'">Editar</button>

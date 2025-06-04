@@ -10,7 +10,7 @@ if (!tarea) {
   window.location.href = "index.html";
 }
 
-// Precargar valores
+// Precargar valores en el formulario
 document.getElementById("titulo").value = tarea.titulo;
 document.getElementById("descripcion").value = tarea.descripcion;
 document.getElementById("responsable").value = tarea.responsable;
@@ -26,12 +26,15 @@ function guardarCambios() {
     eta: document.getElementById("eta").value,
     prioridad: document.getElementById("prioridad").value,
     estado: document.getElementById("estado").value,
-    fechaCreacion: tarea.fechaCreacion // mantener la original
+    fechaCreacion: tarea.fechaCreacion, // Mantener fecha original
+    fechaModificacion: new Date().toLocaleString(), // Nueva fecha de modificación
+    modificadoPor: localStorage.getItem("usuarioActual") || "Desconocido" // Usuario que modifica
   };
 
-  // Reemplazar tarea en localStorage
+  // Reemplazar la tarea editada en el arreglo
   const nuevasTareas = tareas.map(t => t.titulo === tituloOriginal ? nuevaTarea : t);
   localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
 
+  // Volver al dashboard
   window.location.href = "dashboard.html";
 }

@@ -9,9 +9,8 @@ function login() {
   };
 
   if (usuario === credenciales.usuario && contrasena === credenciales.contrasena) {
-    // Guardar sesión en localStorage (opcional)
     localStorage.setItem("logueado", "true");
-    // Redirigir al dashboard
+    localStorage.setItem("usuarioActual", usuario);
     window.location.href = "dashboard.html";
   } else {
     errorMsg.textContent = "Usuario o contraseña incorrectos.";
