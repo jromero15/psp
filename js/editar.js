@@ -10,31 +10,56 @@ if (!tarea) {
   window.location.href = "index.html";
 }
 
-// Precargar valores en el formulario
+// Precargar valores en formulario
 document.getElementById("titulo").value = tarea.titulo;
 document.getElementById("descripcion").value = tarea.descripcion;
 document.getElementById("responsable").value = tarea.responsable;
-document.getElementById("eta").value = tarea.eta;
 document.getElementById("prioridad").value = tarea.prioridad;
 document.getElementById("estado").value = tarea.estado;
 
+// Inicializar Flatpickr con fecha de entrega original y bloqueo de fechas pasadas
+flatpickr("#eta", {
+  defaultDate: tarea.eta,
+  minDate: "today",
+  dateFormat: "Y-m-d",
+  locale: "es",
+  disableMobile: true
+});
+
 function guardarCambios() {
+  const titulo = document.getElementById("titulo").value.trim();
+  const descripcion = document.getElementById("descripcion").value.trim();
+  const responsable = document.getElementById("responsable").value;
+  const eta = document.getElementById("eta").value;
+  const prioridad = document.getElementById("prioridad").value;
+  const estado = document.getElementById("estado").value;
+
+  // Validación de campos obligatorios
+  if (!titulo || !descripcion || !responsable || !eta) {
+    alert("Por favor completa todos los campos.");
+    return;
+  }
+
+  // Validar fecha (no permitir fechas anteriores)
+  const fechaActual = new Date().toISOString().split('T')[0];
+  if (eta < fechaActual) {
+    alert("La fecha de entrega no puede ser anterior a hoy.");
+    return;
+  }
+
   const nuevaTarea = {
-    titulo: document.getElementById("titulo").value.trim(),
-    descripcion: document.getElementById("descripcion").value.trim(),
-    responsable: document.getElementById("responsable").value,
-    eta: document.getElementById("eta").value,
-    prioridad: document.getElementById("prioridad").value,
-    estado: document.getElementById("estado").value,
-    fechaCreacion: tarea.fechaCreacion, // Mantener fecha original
-    fechaModificacion: new Date().toLocaleString(), // Nueva fecha de modificación
-    modificadoPor: localStorage.getItem("usuarioActual") || "Desconocido" // Usuario que modifica
+    titulo,
+    descripcion,
+    responsable,
+    eta,
+    prioridad,
+    estado,
+    fechaCreacion: tarea.fechaCreacion // conservar fecha de creación
   };
 
-  // Reemplazar la tarea editada en el arreglo
+  // Reemplazar tarea original en localStorage
   const nuevasTareas = tareas.map(t => t.titulo === tituloOriginal ? nuevaTarea : t);
   localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
 
-  // Volver al dashboard
   window.location.href = "dashboard.html";
 }

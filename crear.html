@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Lista de Tareas</title>
   <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Incluir CSS de Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- Incluir JS de Flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
   <div class="container">
@@ -16,14 +22,14 @@
     <textarea id="descripcion" placeholder="Descripción"></textarea>
 
     <label for="responsable">Responsable de la tarea</label>
-     <select id="responsable">
+    <select id="responsable">
       <option value="user1">user1</option>
       <option value="user2">user2</option>
       <option value="user3">user3</option>
     </select>
 
     <label for="eta">Fecha de entrega de la tarea</label>
-    <input type="date" id="eta">
+    <input type="text" id="eta" placeholder="Selecciona una fecha">
 
     <label for="prioridad">Prioridad</label>
     <select id="prioridad">
@@ -42,5 +48,16 @@
 
   <script src="js/crear.js"></script>
   <script src="js/eliminar.js"></script>
+
+  <!-- Incluir JS de Flatpickr -->
+  <script>
+    // Configurar Flatpickr para bloquear fechas pasadas
+    flatpickr("#eta", {
+      minDate: "today", // Bloquear fechas anteriores a la fecha actual
+      dateFormat: "Y-m-d", // Formato de fecha (año-mes-día)
+      locale: "es", // Configurar idioma a español
+      disableMobile: true, // Desactivar la versión móvil si no es necesaria
+    });
+  </script>
 </body>
 </html>

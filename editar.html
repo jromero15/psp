@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Editar Tarea</title>
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Editar Tarea</h1>
@@ -23,7 +25,7 @@
     </select>
 
     <label for="eta">Fecha de entrega</label>
-    <input type="date" id="eta">
+    <input type="text" id="eta" placeholder="Selecciona una fecha">
 
     <label for="prioridad">Prioridad</label>
     <select id="prioridad">

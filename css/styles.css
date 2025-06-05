@@ -358,3 +358,19 @@ button {
   padding: 10px;
   cursor: pointer;
 }
+
+/* Personaliza el input */
+#fecha {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+/* Personaliza el calendario */
+.flatpickr-calendar {
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
