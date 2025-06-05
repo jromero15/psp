@@ -54,7 +54,9 @@ function guardarCambios() {
     eta,
     prioridad,
     estado,
-    fechaCreacion: tarea.fechaCreacion // conservar fecha de creación
+    fechaCreacion: tarea.fechaCreacion, // conservar fecha de creación
+    fechaModificacion: new Date().toLocaleString(), // guardar cuándo se modificó
+    modificadoPor: localStorage.getItem("usuarioActual") || "Desconocido",
   };
 
   // Reemplazar tarea original en localStorage

@@ -29,13 +29,6 @@ function eliminarTarea(event) {
     modal.style.display = "none";
   };
 
-  // Función para cancelar la eliminación
-  botonCancelar.onclick = function () {
-    alert("No se eliminó la tarea.");
-
-    // Cerrar el modal
-    modal.style.display = "none";
-  };
 
   // Función para cerrar el modal al hacer clic en la 'X'
   const cerrarModal = document.getElementById("cerrarModal");
