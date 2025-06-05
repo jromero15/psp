@@ -25,8 +25,6 @@ function eliminarTarea(event) {
     tareas = tareas.filter(t => t.titulo !== titulo);
     localStorage.setItem("tareas", JSON.stringify(tareas));
 
-    alert("Tarea eliminada exitosamente.");
-
     // Cerrar el modal
     modal.style.display = "none";
   };
