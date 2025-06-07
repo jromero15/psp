@@ -37,16 +37,16 @@ Este es un proyecto web simple de gestión de tareas (To-Do List), desarrollado 
 ```plaintext
 ├── index.html # Login
 ├── dashboard.html # Panel principal con tareas
-├── crear.html # Panel principal con tareas
+├── crear.html # Creacion de tarea
 ├── editar.html # Edición de tarea
 │
 ├── css/
 │ ├── styles.css
 │
 ├── js/
-│ ├── login.js
-│ ├── dashboard.js
-│ ├── crear.js
-│ ├── editar.js
-│ └── eliminar.js
+│ ├── login.js # Logica Login
+│ ├── dashboard.js # Logica panel de control
+│ ├── crear.js # Logica crear tarea
+│ ├── editar.js # Logica editar tarea
+│ └── eliminar.js # Logica eliminar tarea
  ```
