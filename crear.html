@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>Lista de Tareas</title>
   <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Incluir CSS de Flatpickr -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-  <!-- Incluir JS de Flatpickr -->
+  <!-- CSS de Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- JS de Flatpickr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
@@ -49,14 +48,13 @@
   <script src="js/crear.js"></script>
   <script src="js/eliminar.js"></script>
 
-  <!-- Incluir JS de Flatpickr -->
   <script>
     // Configurar Flatpickr para bloquear fechas pasadas
     flatpickr("#eta", {
-      minDate: "today", // Bloquear fechas anteriores a la fecha actual
-      dateFormat: "Y-m-d", // Formato de fecha (año-mes-día)
-      locale: "es", // Configurar idioma a español
-      disableMobile: true, // Desactivar la versión móvil si no es necesaria
+      minDate: "today",
+      dateFormat: "Y-m-d",
+      locale: "es", 
+      disableMobile: true, 
     });
   </script>
 </body>
