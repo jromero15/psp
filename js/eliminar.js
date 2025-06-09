@@ -1,44 +1,51 @@
 function eliminarTarea(event) {
-  // Obtener el botón que disparó el evento y encontrar la tarjeta completa de la tarea
   const boton = event.target;
-  const tarea = boton.closest(".tarea-card"); // Busca el contenedor de la tarea más cercano
-  const titulo = tarea.querySelector(".tarea-title").textContent; // Obtiene el título de la tarea
+  const tarea = boton.closest(".tarea-card");
 
-  // Referencias al modal y sus elementos
+  if (!tarea) {
+    console.error("No se encontró la tarjeta de tarea.");
+    return;
+  }
+
+  const titulo = tarea.querySelector(".tarea-title")?.textContent || "tarea sin título";
+
+  // Referencias al modal
   const modal = document.getElementById("modalEliminar");
   const tituloModal = document.getElementById("tituloModal");
   const botonConfirmar = document.getElementById("confirmarEliminacion");
   const botonCancelar = document.getElementById("cancelarEliminacion");
 
-  // Mostrar el título dinámicamente en el modal
-  tituloModal.textContent = `Eliminar tarea: "${titulo}"`;
+  if (!modal || !tituloModal || !botonConfirmar || !botonCancelar) {
+    console.error("Faltan elementos del modal.");
+    return;
+  }
 
-  // Mostrar el modal
+  // Mostrar el título en el modal
+  tituloModal.textContent = `Eliminar tarea: "${titulo}"`;
   modal.style.display = "block";
 
-  // Acción al confirmar la eliminación
+  // Confirmar eliminación
   botonConfirmar.onclick = function () {
-    // 1. Eliminar visualmente del DOM
+    // 1. Eliminar visualmente
     tarea.remove();
 
     // 2. Eliminar del localStorage
     let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
-    tareas = tareas.filter(t => t.titulo !== titulo); // Filtra la tarea a eliminar
-    localStorage.setItem("tareas", JSON.stringify(tareas)); // Guarda la lista actualizada
+    tareas = tareas.filter(t => t.titulo !== titulo);
+    localStorage.setItem("tareas", JSON.stringify(tareas));
 
-    // 3. Cerrar el modal
+    // 3. Cerrar modal
     modal.style.display = "none";
   };
 
-  // Acción para cerrar el modal desde la 'X' (cerrarModal)
-  const cerrarModal = document.getElementById("cerrarModal");
-  cerrarModal.onclick = function () {
+  // Cancelar/cerrar modal
+  botonCancelar.onclick = function () {
     modal.style.display = "none";
   };
 
-  // Permitir cerrar el modal haciendo clic fuera del área del modal
-  window.onclick = function (event) {
-    if (event.target === modal) {
+  // Cerrar modal al hacer clic fuera
+  window.onclick = function (e) {
+    if (e.target === modal) {
       modal.style.display = "none";
     }
   };
