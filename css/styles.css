@@ -124,7 +124,7 @@ ul {
 }
 
 .editar-btn {
-  background-color: #facc15; /* Amarillo */
+  background-color: #facc15;
   color: black;
   border: none;
   padding: 6px 12px;
@@ -197,21 +197,21 @@ ul {
 }
 
 .prioridad-alta {
-  color: #dc2626; /* rojo */
+  color: #dc2626;
   font-weight: bold;
 }
 
 .prioridad-media {
-  color: #facc15; /* amarillo */
+  color: #facc15;
   font-weight: bold;
 }
 
 .prioridad-baja {
-  color: #10b981; /* verde */
+  color: #10b981;
   font-weight: bold;
 }
 
-/* Opcional: círculo tipo semáforo */
+
 .semaforo {
   display: inline-block;
   width: 12px;
@@ -233,21 +233,20 @@ ul {
 }
 
 .estado-pendiente {
-  color: #dc2626; /* rojo */
+  color: #dc2626;
   font-weight: bold;
 }
 
 .estado-en-progreso {
-  color: #f97316; /* naranja */
+  color: #f97316; 
   font-weight: bold;
 }
 
 .estado-completado {
-  color: #10b981; /* verde */
+  color: #10b981;
   font-weight: bold;
 }
 
-/* Círculo tipo semáforo */
 .semaforo-estado {
   display: inline-block;
   width: 12px;
@@ -268,16 +267,15 @@ ul {
   background-color: #10b981;
 }
 
-/* Estilo para el modal */
 .modal {
-  display: none; /* Oculto por defecto */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-contenido {
@@ -318,16 +316,15 @@ ul {
   background-color: #388e3c;
 }
 
-/* Estilos para el modal */
 .modal {
-  display: none; /* Inicialmente oculto */
+  display: none;
   position: fixed;
-  z-index: 1; /* Para que aparezca sobre otros elementos */
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -359,7 +356,6 @@ button {
   cursor: pointer;
 }
 
-/* Personaliza el input */
 #fecha {
   padding: 10px;
   font-size: 16px;
@@ -368,7 +364,6 @@ button {
   width: 250px;
 }
 
-/* Personaliza el calendario */
 .flatpickr-calendar {
   border-radius: 10px;
   background-color: #f0f8ff;
