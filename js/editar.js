@@ -9,7 +9,7 @@ let tarea = tareas.find(t => t.titulo === tituloOriginal);
 // Si no se encuentra la tarea, redirige al inicio
 if (!tarea) {
   alert("Tarea no encontrada.");
-  window.location.href = "index.html";
+  window.location.href = "dashboard.html";
 }
 
 // Precargar los datos existentes en el formulario de edición
